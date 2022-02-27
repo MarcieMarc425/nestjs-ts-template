@@ -18,29 +18,41 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.json",
+    "prepare": "husky install",
+    "documentation:serve": "npx @compodoc/compodoc -p tsconfig.json -s"
   },
   "dependencies": {
+    "@changesets/cli": "^2.21.0",
     "@nestjs/common": "^8.0.0",
+    "@nestjs/config": "^1.2.0",
     "@nestjs/core": "^8.0.0",
     "@nestjs/platform-express": "^8.0.0",
+    "@nestjs/swagger": "^5.2.0",
+    "@prisma/client": "^3.10.0",
+    "class-transformer": "^0.5.1",
+    "class-validator": "^0.13.2",
+    "joi": "^17.6.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
-    "rxjs": "^7.2.0"
+    "rxjs": "^7.2.0",
+    "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+    "@compodoc/compodoc": "^1.1.19",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
     "@nestjs/testing": "^8.0.0",
     "@types/express": "^4.17.13",
     "@types/jest": "27.4.1",
-    "@types/node": "^16.0.0",
+    "@types/node": "^17.0.21",
     "@types/supertest": "^2.0.11",
     "@typescript-eslint/eslint-plugin": "^5.0.0",
     "@typescript-eslint/parser": "^5.0.0",
     "eslint": "^8.0.1",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.0",
     "jest": "^27.2.5",
     "prettier": "^2.3.2",
     "prisma": "^3.10.0",
@@ -50,7 +62,7 @@
     "ts-loader": "^9.2.3",
     "ts-node": "^10.0.0",
     "tsconfig-paths": "^3.10.1",
-    "typescript": "^4.3.5"
+    "typescript": "^4.5.5"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -62,6 +74,18 @@
     "testRegex": ".*\\.spec\\.ts$",
     "transform": {
       "^.+\\.(t|j)s$": "ts-jest"
+    },
+    "moduleNameMapper": {
+      "src/(.*)": "<rootDir>/$1",
+      "@providers/(.*)": "<rootDir>/providers/$1",
+      "@services/(.*)": "<rootDir>/services/$1",
+      "@types/(.*)": "<rootDir>/types/$1",
+      "@interfaces": "<rootDir>/interfaces",
+      "@interfaces/(.*)": "<rootDir>/interfaces/$1",
+      "@utils/(.*)": "<rootDir>/utils/$1",
+      "@configs/(.*)": "<rootDir>/configs/$1",
+      "@constants": "<rootDir>/constants",
+      "@modules/(.*)": "<rootDir>/modules/$1"
     },
     "collectCoverageFrom": [
       "**/*.(t|j)s"

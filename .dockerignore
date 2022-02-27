@@ -1,0 +1,25 @@
+node_modules
+npm-debug.log
+*.log
+
+# env
+.env
+.env.example
+docker.env
+
+# config
+.dockerignore
+.eslintrc.js
+.eslintignore
+.prettierignore
+.prettierrc
+Dockerfile
+.vscode
+.husky
+
+# build artifcts
+dist
+coverage
+
+# tests
+test

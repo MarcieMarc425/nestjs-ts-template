@@ -1,0 +1,42 @@
+version: '3.8'
+services:
+  app:
+    image: nestjs-ts-template:test
+    environment:
+      - PORT=3000
+      - DATABASE_URL=postgres://admin:admin@localhost:5432/db
+    ports:
+      - '3000:3000'
+
+  postgres:
+    container_name: postgres
+    image: postgres:latest
+    ports:
+      - '5432:5432'
+    volumes:
+      - /data/postgres:/data/postgres
+    environment:
+      - POSTGRES_USER=admin
+      - POSTGRES_PASSWORD=admin
+      - POSTGRES_DB=db
+    networks:
+      - postgres
+
+  pgadmin:
+    links:
+      - postgres:postgres
+    container_name: pgadmin
+    image: dpage/pgadmin4
+    ports:
+      - '8080:80'
+    volumes:
+      - /data/pgadmin:/root/.pgadmin
+    environment:
+      - PGADMIN_DEFAULT_EMAIL=admin@admin.com
+      - PGADMIN_DEFAULT_PASSWORD=admin
+    networks:
+      - postgres
+
+networks:
+  postgres:
+    driver: bridge
