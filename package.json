@@ -1,7 +1,7 @@
 {
   "name": "nestjs-ts-template",
-  "version": "0.0.1",
-  "description": "NestJS and Typescript template",
+  "version": "0.0.0",
+  "description": "A NestJS and TS template - batteries included w/ Prisma, Compodoc, Swagger, Jest and more.",
   "author": "@marciemarc425",
   "private": true,
   "license": "UNLICENSED",
@@ -39,6 +39,8 @@
     "swagger-ui-express": "^4.3.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^16.2.1",
+    "@commitlint/config-conventional": "^16.2.1",
     "@compodoc/compodoc": "^1.1.19",
     "@nestjs/cli": "^8.0.0",
     "@nestjs/schematics": "^8.0.0",
