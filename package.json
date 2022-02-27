@@ -1,6 +1,6 @@
 {
   "name": "nestjs-ts-template",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A NestJS and TS template - batteries included w/ Prisma, Compodoc, Swagger, Jest and more.",
   "author": "@marciemarc425",
   "private": true,
