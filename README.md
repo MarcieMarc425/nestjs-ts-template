@@ -46,7 +46,11 @@ A [Nest](https://github.com/nestjs/nest) and TS production-grade template for en
 ## Installation
 
 ```bash
-$ npm install
+# Install packages
+$ yarn
+
+# Copy .env.example to .env
+$ cp .env.example .env
 ```
 
 ## Running the app
@@ -95,7 +99,7 @@ $ yarn documentation:serve
 ## Cypress
 
 ```bash
-# Init cypress
+# Init cypress UI
 $ yarn cypress:open
 ```
 
