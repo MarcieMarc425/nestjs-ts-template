@@ -24,7 +24,24 @@
 
 ## Description
 
-A [Nest](https://github.com/nestjs/nest) and TS template - batteries included w/ Prisma, Compodoc, Swagger, Jest and more..
+A [Nest](https://github.com/nestjs/nest) and TS production-grade template for enterprise - batteries included w/ Prisma, Compodoc, Swagger, Jest and more..
+
+## Features
+
+- NestJS
+- Typescript
+- Linting w/ eslint and prettier
+- Unit Testing w/ jest
+- Integration and E2E Testing w/ cypress
+- Logging w/ pino and pino-http
+- Documentation w/ compodoc
+- OpenAPI w/ swagger
+- ORM w/ prisma and postgreSQL
+- Release management w/ standard-version
+- Commitlint
+- Commitizen
+- Husky
+- Docker and Docker-compose
 
 ## Installation
 
@@ -36,26 +53,57 @@ $ npm install
 
 ```bash
 # development
-$ npm run start
+$ yarn start
 
 # watch mode
-$ npm run start:dev
+$ yarn start:dev
 
 # production mode
-$ npm run start:prod
+$ yarn start:prod
 ```
 
 ## Test
 
 ```bash
 # unit tests
-$ npm run test
+$ yarn test
 
 # e2e tests
-$ npm run test:e2e
+$ yarn test:e2e
 
 # test coverage
-$ npm run test:cov
+$ yarn test:cov
+```
+
+## Commit and Versioning
+
+```bash
+# Commit
+$ yarn commit
+
+# Release
+$ yarn release
+```
+
+## Compodoc
+
+```bash
+# Init compodoc documentation
+$ yarn documentation:serve
+```
+
+## Cypress
+
+```bash
+# Init cypress
+$ yarn cypress:open
+```
+
+## Git
+
+```bash
+# Cleanup local git branches
+$ yarn git:cleanup
 ```
 
 ## Support
