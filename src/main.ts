@@ -4,9 +4,12 @@ import { AppModule } from 'src/app.module';
 import { BASE_API_ROUTE, BASE_ROUTE, DEFAULT_API_VERSION } from '@constants';
 import { ConfigService } from '@nestjs/config';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
+import { Logger } from 'nestjs-pino';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, { bufferLogs: true });
+
+  app.useLogger(app.get(Logger));
 
   app.enableVersioning({
     type: VersioningType.URI,
